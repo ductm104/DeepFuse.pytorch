@@ -1,0 +1,6 @@
+.vscode/
+dataset.zip
+train_result/
+dataset/
+*.pyc
+.DS_Store
