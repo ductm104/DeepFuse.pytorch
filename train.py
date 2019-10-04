@@ -4,8 +4,8 @@ from lib.loss import MEF_SSIM_Loss
 from lib.model import DeepFuse
 from opts import TrainOptions
 
-import torchvision_sunner.transforms as sunnertransforms
-import torchvision_sunner.data as sunnerData
+from torchvision_sunner import transforms as sunnertransforms
+from torchvision_sunner import data as sunnerData
 import torchvision.transforms as transforms
 
 from matplotlib import pyplot as plt
@@ -34,7 +34,8 @@ def train(opts):
                 sunnertransforms.ToTensor(),
                 sunnertransforms.ToFloat(),
                 sunnertransforms.Transpose(sunnertransforms.BHWC2BCHW),
-                sunnertransforms.Normalize(),
+                sunnertransforms.Normalize(
+                    mean=[127.5, 127.5, 127.5], std=[127.5, 127.5, 127.5]),
             ])
         ), batch_size=opts.batch_size, shuffle=True, num_workers=0
     )

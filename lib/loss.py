@@ -116,7 +116,7 @@ class MEF_SSIM_Loss(nn.Module):
         # The result will much better than the original formula
         # =============================================================================================
         y_hat = c_hat * s_hat
-        y_hat += (y_2 + miu_y) / 2
+        # y_hat += (y_2 + miu_y) / 2
 
         # Check if need to create the gaussian window
         (_, channel, _, _) = y_hat.size()

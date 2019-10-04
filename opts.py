@@ -42,8 +42,8 @@ class TrainOptions():
         parser = argparse.ArgumentParser()
         parser.add_argument(
             '--folder', type=str, default="./dataset/images/Bracketed_images")
-        parser.add_argument('--crop_size', type=int, default=64)
-        parser.add_argument('--batch_size', type=int, default=8)
+        parser.add_argument('--crop_size', type=int, default=256)
+        parser.add_argument('--batch_size', type=int, default=16)
         parser.add_argument('--resume', type=str, default="1.pth")
         parser.add_argument('--det', type=str, default="train_result")
         parser.add_argument('--epoch', type=int, default=500)
